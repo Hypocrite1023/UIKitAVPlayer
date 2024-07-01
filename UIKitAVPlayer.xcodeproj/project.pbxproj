@@ -10,12 +10,18 @@
 		CD44A77A2C2C4A1E00022D7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44A7792C2C4A1E00022D7E /* AppDelegate.swift */; };
 		CD44A77C2C2C4A1E00022D7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44A77B2C2C4A1E00022D7E /* SceneDelegate.swift */; };
 		CD44A77E2C2C4A1E00022D7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44A77D2C2C4A1E00022D7E /* ViewController.swift */; };
-		CD44A7812C2C4A1E00022D7E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CD44A7802C2C4A1E00022D7E /* Base */; };
 		CD44A7832C2C4A2000022D7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD44A7822C2C4A2000022D7E /* Assets.xcassets */; };
 		CD44A7862C2C4A2000022D7E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CD44A7852C2C4A2000022D7E /* Base */; };
 		CD44A78F2C2E404D00022D7E /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44A78E2C2E404D00022D7E /* VideoViewController.swift */; };
 		CD44A7912C30096300022D7E /* MainViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44A7902C30096300022D7E /* MainViewViewController.swift */; };
 		CD44A7942C314A9C00022D7E /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44A7932C314A9C00022D7E /* DataModel.swift */; };
+		CD44A7962C31BC4600022D7E /* HomePageNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44A7952C31BC4600022D7E /* HomePageNavigationViewController.swift */; };
+		CD44A7992C32940700022D7E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44A7982C32940700022D7E /* MainView.swift */; };
+		CD44A79B2C32ABD800022D7E /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44A79A2C32ABD800022D7E /* PlayerView.swift */; };
+		CD44A79D2C32EE5500022D7E /* AVPlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44A79C2C32EE5500022D7E /* AVPlayerModel.swift */; };
+		CD44A7A02C33100700022D7E /* ClipRecordDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44A79F2C33100600022D7E /* ClipRecordDelegate.swift */; };
+		CD44A7A22C33102D00022D7E /* PlayerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44A7A12C33102D00022D7E /* PlayerViewDelegate.swift */; };
+		CD44A7A42C33107900022D7E /* MainViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44A7A32C33107900022D7E /* MainViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,13 +29,19 @@
 		CD44A7792C2C4A1E00022D7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD44A77B2C2C4A1E00022D7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CD44A77D2C2C4A1E00022D7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CD44A7802C2C4A1E00022D7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD44A7822C2C4A2000022D7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD44A7852C2C4A2000022D7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD44A7872C2C4A2000022D7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD44A78E2C2E404D00022D7E /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		CD44A7902C30096300022D7E /* MainViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewController.swift; sourceTree = "<group>"; };
 		CD44A7932C314A9C00022D7E /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		CD44A7952C31BC4600022D7E /* HomePageNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageNavigationViewController.swift; sourceTree = "<group>"; };
+		CD44A7982C32940700022D7E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CD44A79A2C32ABD800022D7E /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		CD44A79C2C32EE5500022D7E /* AVPlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerModel.swift; sourceTree = "<group>"; };
+		CD44A79F2C33100600022D7E /* ClipRecordDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipRecordDelegate.swift; sourceTree = "<group>"; };
+		CD44A7A12C33102D00022D7E /* PlayerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewDelegate.swift; sourceTree = "<group>"; };
+		CD44A7A32C33107900022D7E /* MainViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +74,13 @@
 		CD44A7782C2C4A1E00022D7E /* UIKitAVPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				CD44A7922C314A8700022D7E /* DataModel */,
+				CD44A79E2C330FD700022D7E /* Protocol */,
+				CD44A7922C314A8700022D7E /* Model */,
+				CD44A7972C32938C00022D7E /* View */,
 				CD44A78D2C2E401400022D7E /* Controller */,
 				CD44A7792C2C4A1E00022D7E /* AppDelegate.swift */,
 				CD44A77B2C2C4A1E00022D7E /* SceneDelegate.swift */,
 				CD44A77D2C2C4A1E00022D7E /* ViewController.swift */,
-				CD44A77F2C2C4A1E00022D7E /* Main.storyboard */,
 				CD44A7822C2C4A2000022D7E /* Assets.xcassets */,
 				CD44A7842C2C4A2000022D7E /* LaunchScreen.storyboard */,
 				CD44A7872C2C4A2000022D7E /* Info.plist */,
@@ -80,16 +93,37 @@
 			children = (
 				CD44A78E2C2E404D00022D7E /* VideoViewController.swift */,
 				CD44A7902C30096300022D7E /* MainViewViewController.swift */,
+				CD44A7952C31BC4600022D7E /* HomePageNavigationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		CD44A7922C314A8700022D7E /* DataModel */ = {
+		CD44A7922C314A8700022D7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				CD44A7932C314A9C00022D7E /* DataModel.swift */,
+				CD44A79C2C32EE5500022D7E /* AVPlayerModel.swift */,
 			);
-			path = DataModel;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD44A7972C32938C00022D7E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD44A7982C32940700022D7E /* MainView.swift */,
+				CD44A79A2C32ABD800022D7E /* PlayerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD44A79E2C330FD700022D7E /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CD44A79F2C33100600022D7E /* ClipRecordDelegate.swift */,
+				CD44A7A12C33102D00022D7E /* PlayerViewDelegate.swift */,
+				CD44A7A32C33107900022D7E /* MainViewDelegate.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +186,6 @@
 			files = (
 				CD44A7832C2C4A2000022D7E /* Assets.xcassets in Resources */,
 				CD44A7862C2C4A2000022D7E /* Base in Resources */,
-				CD44A7812C2C4A1E00022D7E /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,26 +196,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD44A7A02C33100700022D7E /* ClipRecordDelegate.swift in Sources */,
+				CD44A79B2C32ABD800022D7E /* PlayerView.swift in Sources */,
 				CD44A77E2C2C4A1E00022D7E /* ViewController.swift in Sources */,
+				CD44A7992C32940700022D7E /* MainView.swift in Sources */,
 				CD44A7912C30096300022D7E /* MainViewViewController.swift in Sources */,
 				CD44A77A2C2C4A1E00022D7E /* AppDelegate.swift in Sources */,
+				CD44A7A22C33102D00022D7E /* PlayerViewDelegate.swift in Sources */,
+				CD44A7962C31BC4600022D7E /* HomePageNavigationViewController.swift in Sources */,
 				CD44A77C2C2C4A1E00022D7E /* SceneDelegate.swift in Sources */,
 				CD44A78F2C2E404D00022D7E /* VideoViewController.swift in Sources */,
+				CD44A7A42C33107900022D7E /* MainViewDelegate.swift in Sources */,
 				CD44A7942C314A9C00022D7E /* DataModel.swift in Sources */,
+				CD44A79D2C32EE5500022D7E /* AVPlayerModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CD44A77F2C2C4A1E00022D7E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CD44A7802C2C4A1E00022D7E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CD44A7842C2C4A2000022D7E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -325,7 +357,6 @@
 				INFOPLIST_FILE = UIKitAVPlayer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -353,7 +384,6 @@
 				INFOPLIST_FILE = UIKitAVPlayer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
