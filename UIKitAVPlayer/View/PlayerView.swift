@@ -59,8 +59,9 @@ class PlayerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        mergeView.frame = UIScreen.main.bounds
-        print(mergeView.frame)
+        self.frame = frame
+        mergeView.frame = frame
+//        print(mergeView.frame)
         self.addSubview(mergeView)
 //        self.playerViewDelegate = playerViewDelegate
         
@@ -81,7 +82,7 @@ class PlayerView: UIView {
         
         // MARK: - 設定constraints
         setupConstraints()
-        print(bottomControlBar.frame)
+//        print(bottomControlBar.frame)
     }
     
     required init?(coder: NSCoder) {

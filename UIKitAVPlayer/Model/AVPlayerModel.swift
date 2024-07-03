@@ -8,7 +8,7 @@
 import Foundation
 import AVFoundation
 
-struct AVPlayerModel {
+class AVPlayerModel {
     var player: AVPlayer
     
     init(url: URL) {

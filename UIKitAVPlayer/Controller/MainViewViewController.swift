@@ -8,27 +8,37 @@
 import UIKit
 import CoreMedia
 import AVFoundation
+//import MobileVLCKit
 
 class MainViewViewController: UIViewController {
     
     // an array to store your clip info
     var clipArray: [clipInfo] = []
     var avPlayerModel: AVPlayerModel!
-    var mainView: MainView?
+//    var mediaPlayer: VLCMediaPlayer!
+    var mainView: MainView!
     
-    
-    override func loadView() {
-        mainView = MainView()
-        mainView?.mainViewDelegate = self
-        mainView?.bounds = UIScreen.main.bounds
-        view = mainView
+    init(avPlayerModel: AVPlayerModel!) {
+//        self.mediaPlayer = mediaPlayer
+        self.avPlayerModel = avPlayerModel
+        super.init(nibName: nil, bundle: nil)
     }
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        avPlayerModel = AVPlayerModel(url: URL(string: "http://192.168.0.104:84/2023-07-05-1/2023-07-05-1-15.mp4")!)
+        
+        mainView = MainView()
+        mainView?.mainViewDelegate = self
+        mainView?.frame = UIScreen.main.bounds
+        self.view.addSubview(mainView)
+        
+//        avPlayerModel = AVPlayerModel(url: URL(string: "http://192.168.0.104:84/2023-07-05-1/2023-07-05-1-15.mp4")!)
         mainView?.clipTableView.dataSource = self
         mainView?.clipTableView.delegate = self
         setupInitialConstraint()
@@ -79,7 +89,7 @@ extension MainViewViewController: UITableViewDataSource {
 // MARK: - extension MainViewViewController: UITableViewDelegate
 extension MainViewViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let videoViewController = VideoViewController(url: URL(string: "http://192.168.0.104:84/2023-07-05-1/2023-07-05-1-15.mp4")!)
+        let videoViewController = VideoViewController(videoPlayerModel: avPlayerModel, frame: UIScreen.main.bounds)
 //        let videoURL = URL(string: "http://192.168.0.104:84/2023-07-05-1/2023-07-05-1-15.mp4")!
 //        videoViewController.asset = AVAsset(url: videoURL)
         let timeStr = clipArray[indexPath.row].startTime?.split(separator: ":")
@@ -107,9 +117,11 @@ extension MainViewViewController: ClipRecordDelegate {
 extension MainViewViewController: MainViewDelegate {
     func playButtonTap() {
         print("tap")
-        let videoViewController = VideoViewController(url: URL(string: "http://192.168.0.104:84/2023-07-05-1/2023-07-05-1-15.mp4")!)
+        let videoViewController = VideoViewController(videoPlayerModel: avPlayerModel,frame: UIScreen.main.bounds)
         videoViewController.modalPresentationStyle = .fullScreen
         videoViewController.clipTableViewDataSourceDelegate = self
+//        print(videoViewController.view.frame, "xxx")
+        
         present(videoViewController, animated: true)
     }
     

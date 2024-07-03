@@ -9,6 +9,7 @@ import UIKit
 import AVKit
 import AVFoundation
 import Combine
+//import MobileVLCKit
 
 ///啟動播放器需要至少一個參數 AVAsset, delegate?如果需要顯示剪輯時間
 class VideoViewController: UIViewController {
@@ -30,11 +31,15 @@ class VideoViewController: UIViewController {
     
     var videoPlayerModel: AVPlayerModel!
     var playerView: PlayerView!
-    let assetURL: URL?
+//    var mediaPlayer: VLCMediaPlayer!
+//    let assetURL: URL?
     weak var clipTableViewDataSourceDelegate: ClipRecordDelegate?
     
-    init(url: URL) {
-        self.assetURL = url
+    init(videoPlayerModel: AVPlayerModel, frame: CGRect) {
+        self.videoPlayerModel = videoPlayerModel
+//        self.mediaPlayer = mediaPlayer
+        playerView = PlayerView(frame: frame)
+        self.playerView.frame = frame
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -47,12 +52,12 @@ class VideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // MARK: - 建構介面
-        videoPlayerModel = AVPlayerModel(url: assetURL!)
-        playerView = PlayerView()
+        
         playerView.playerViewDelegate = self
-        playerView.frame = UIScreen.main.bounds
+//        playerView.frame = CGRect(x: 0, y: 200, width: 300, height: 200)
 //        print(playerView.bounds)
         self.view.addSubview(playerView)
+//        self.view.bounds = CGRect(x: 0, y: 200, width: 300, height: 200)
         playerView.player = videoPlayerModel.player
         
         // 將影片總時長publish

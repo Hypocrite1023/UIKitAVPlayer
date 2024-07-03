@@ -24,6 +24,7 @@ class MainView: UIView {
     var circleViewUnderPlayButton: UIView!
     //table view to show your clips
     var clipTableView: UITableView!
+    var exportClipTimeButton: UIButton!
     
     //portrait constraint setting
     var portraitConstraints: [NSLayoutConstraint] = []
@@ -34,14 +35,11 @@ class MainView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.videoViewTemplate = UIView()
-        self.playButton = UIButton()
-        self.circleViewUnderPlayButton = UIButton()
-        self.clipTableView = UITableView()
-        
+//        self.backgroundColor = .white
         setupVideoViewTemplate()
         setupPlayButton()
         setupClipTableView()
+        setupExportClipTimeButton()
     }
     
     required init?(coder: NSCoder) {
@@ -50,27 +48,32 @@ class MainView: UIView {
     
     // MARK: - setup videoViewTemplate
     func setupVideoViewTemplate() -> () {
+//        let videoPreviewImage = UIImageView()
+        videoViewTemplate = UIView()
+//        videoViewTemplate.backgroundColor = .black
+//        videoPreviewImage.contentMode = .scaleAspectFit
+//        videoPreviewImage.translatesAutoresizingMaskIntoConstraints = false
+//        let videoAsset = AVAsset(url: URL(string: "http://192.168.0.104:84/2023-07-05-1/2023-07-05-1-15.mp4")!)
+//        let previewImageGenerator = AVAssetImageGenerator(asset: videoAsset)
+//        
+//        videoPreviewImage.image = UIImage(cgImage: try! previewImageGenerator.copyCGImage(at: CMTime(seconds: 5, preferredTimescale: 1), actualTime: nil))
+//        self.videoViewTemplate.addSubview(videoPreviewImage)
+//        NSLayoutConstraint.activate([
+//            videoPreviewImage.topAnchor.constraint(equalTo: videoViewTemplate.topAnchor),
+//            videoPreviewImage.leadingAnchor.constraint(equalTo: videoViewTemplate.leadingAnchor),
+//            videoPreviewImage.trailingAnchor.constraint(equalTo: videoViewTemplate.trailingAnchor),
+//            videoPreviewImage.bottomAnchor.constraint(equalTo: videoViewTemplate.bottomAnchor)
+//        ])
         videoViewTemplate.backgroundColor = .black
-        let videoPreviewImage = UIImageView()
-        videoPreviewImage.contentMode = .scaleAspectFit
-        videoPreviewImage.translatesAutoresizingMaskIntoConstraints = false
-        let videoAsset = AVAsset(url: URL(string: "http://192.168.0.104:84/2023-07-05-1/2023-07-05-1-15.mp4")!)
-        let previewImageGenerator = AVAssetImageGenerator(asset: videoAsset)
-        
-        videoPreviewImage.image = UIImage(cgImage: try! previewImageGenerator.copyCGImage(at: CMTime(seconds: 5, preferredTimescale: 1), actualTime: nil))
-        self.videoViewTemplate.addSubview(videoPreviewImage)
-        NSLayoutConstraint.activate([
-            videoPreviewImage.topAnchor.constraint(equalTo: videoViewTemplate.topAnchor),
-            videoPreviewImage.leadingAnchor.constraint(equalTo: videoViewTemplate.leadingAnchor),
-            videoPreviewImage.trailingAnchor.constraint(equalTo: videoViewTemplate.trailingAnchor),
-            videoPreviewImage.bottomAnchor.constraint(equalTo: videoViewTemplate.bottomAnchor)
-        ])
         videoViewTemplate.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(videoViewTemplate)
+        print("videoViewTemplate")
+        print(videoViewTemplate.frame, "videoViewTemplate.frame")
     }
     // MARK: - setup playButton
     func setupPlayButton() -> () {
 //        circleView.bounds.size = CGSize(width: 100, height: 100)
+        circleViewUnderPlayButton = UIView()
         circleViewUnderPlayButton.layer.cornerRadius = 25
         circleViewUnderPlayButton.clipsToBounds = true
         circleViewUnderPlayButton.backgroundColor = .white.withAlphaComponent(0.8)
@@ -91,8 +94,26 @@ class MainView: UIView {
     func setupClipTableView() -> () {
 //        clipTableView.dataSource = clipTableViewDataSource
 //        clipTableView.delegate = clipTableViewDelegate
+        clipTableView = UITableView()
         clipTableView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(clipTableView)
+    }
+    // MARK: - setup exportClipTimeButton
+    func setupExportClipTimeButton() -> () {
+        exportClipTimeButton = UIButton()
+        
+        var exportClipTimeButtonConf = UIButton.Configuration.plain()
+        exportClipTimeButtonConf.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
+        let attributedTitle = NSAttributedString(string: "export".uppercased(), attributes: [.foregroundColor: UIColor.white, .font: UIFont.boldSystemFont(ofSize: 16)])
+        exportClipTimeButtonConf.attributedTitle = AttributedString(attributedTitle)
+        exportClipTimeButton.configuration = exportClipTimeButtonConf
+        exportClipTimeButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        exportClipTimeButton.translatesAutoresizingMaskIntoConstraints = false
+        exportClipTimeButton.layer.cornerRadius = 15
+        exportClipTimeButton.clipsToBounds = true
+        exportClipTimeButton.backgroundColor = .red
+//        exportClipTimeButton.bounds.size = CGSize(width: 100, height: 30)
+        self.addSubview(exportClipTimeButton)
     }
     // MARK: - setup portrait constraint
     func setupPortraitModeConstraint() -> () {
@@ -117,7 +138,11 @@ class MainView: UIView {
             clipTableView.topAnchor.constraint(equalTo: self.videoViewTemplate.bottomAnchor, constant: 20),
             clipTableView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             clipTableView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            clipTableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
+            clipTableView.bottomAnchor.constraint(equalTo: self.exportClipTimeButton.topAnchor),
+            
+            exportClipTimeButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
+            exportClipTimeButton.heightAnchor.constraint(equalToConstant: 30),
+            exportClipTimeButton.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ]
         NSLayoutConstraint.activate(portraitConstraints)
     }
@@ -144,7 +169,11 @@ class MainView: UIView {
             clipTableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             clipTableView.leadingAnchor.constraint(equalTo: self.videoViewTemplate.trailingAnchor, constant: 20),
             clipTableView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            clipTableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
+            clipTableView.bottomAnchor.constraint(equalTo: self.exportClipTimeButton.topAnchor),
+            
+            exportClipTimeButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
+            exportClipTimeButton.heightAnchor.constraint(equalToConstant: 20),
+            exportClipTimeButton.centerXAnchor.constraint(equalTo: self.clipTableView.centerXAnchor)
         ]
         NSLayoutConstraint.activate(landscapeConstraints)
     }

@@ -14,7 +14,8 @@ class HomePageNavigationViewController: UINavigationController {
 
         // Do any additional setup after loading the view.
 //        self.view.backgroundColor = .gray
-        self.viewControllers = [MainViewViewController()]
+        self.viewControllers = [InputUrlTextFieldViewViewController()]
+        self.view.backgroundColor = .systemBackground
     }
     
 
